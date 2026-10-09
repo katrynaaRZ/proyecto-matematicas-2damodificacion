@@ -1,0 +1,656 @@
+/* ========================================================
+   PLATAFORMA EDUCATIVA "MIS TABLAS" - 4° BÁSICO
+   CSS PRINCIPAL DEL SISTEMA (main.css)
+   ======================================================== */
+
+:root {
+  --primary: #4361ee;
+  --primary-light: #4895ef;
+  --secondary: #f72585;
+  --accent: #4cc9f0;
+  --yellow: #ffb703;
+  --orange: #fb8500;
+  --green: #2ec4b6;
+  --green-dark: #0f766e;
+  --purple: #7209b7;
+  --purple-light: #9d4edd;
+  
+  --bg-main: #f0f4fd;
+  --card-bg: #ffffff;
+  --text-main: #1e1b4b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 8px 24px rgba(67, 97, 238, 0.08);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 50px;
+
+  --font-family: 'Fredoka', 'Quicksand', 'Nunito', 'Segoe UI', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* ========================================================
+   BARRA SUPERIOR (HEADER)
+   ======================================================== */
+.main-header {
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid #e2e8f0;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--yellow), var(--orange));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 10px rgba(251, 133, 0, 0.3);
+}
+
+.brand-text h1 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.brand-text span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* Perfil y Estadísticas del Alumno */
+.header-student-profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.student-capsule {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  padding: 6px 14px 6px 8px;
+  border-radius: var(--radius-pill);
+  border: 2px solid #e2e8f0;
+}
+
+.student-avatar-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: 2px solid var(--primary);
+}
+
+.student-info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-name {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.student-level-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+/* Marcadores de Estrellas y Puntos */
+.stats-capsules {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stat-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fef3c7;
+  color: #92400e;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  font-size: 0.9rem;
+  border: 2px solid #fde68a;
+}
+
+.stat-chip.xp {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-color: #bae6fd;
+}
+
+/* Botones de Cabecera */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 3px 0 #94a3b8, 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
+}
+
+.btn-icon:hover {
+  background: #f8fafc;
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 5px 0 #94a3b8, 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+.btn-icon:active {
+  transform: translateY(2px) scale(0.95);
+  box-shadow: 0 1px 0 #94a3b8;
+}
+
+.btn-exit {
+  color: #e11d48;
+}
+
+.btn-exit:hover {
+  border-color: #f43f5e;
+  background: #fff1f2;
+}
+
+/* ========================================================
+   CONTENEDOR PRINCIPAL Y VISTAS
+   ======================================================== */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  flex: 1;
+  width: 100%;
+}
+
+.view-section {
+  display: none;
+  animation: fadeIn 0.35s ease;
+}
+
+.view-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Barra de Navegación Rápida / Breadcrumb */
+.nav-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  cursor: pointer;
+  box-shadow: 0 4px 0 #94a3b8, 0 6px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
+}
+
+.btn-back:hover {
+  background: #f8fafc;
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px) translateX(-3px);
+  box-shadow: 0 6px 0 #94a3b8, 0 10px 18px rgba(67, 97, 238, 0.15);
+}
+
+.btn-back:active {
+  transform: translateY(3px) translateX(0);
+  box-shadow: 0 1px 0 #94a3b8;
+}
+
+/* ========================================================
+   MENÚ PRINCIPAL (DASHBOARD)
+   ======================================================== */
+.welcome-banner {
+  background: linear-gradient(135deg, #4361ee, #7209b7);
+  color: white;
+  padding: 28px 32px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(67, 97, 238, 0.25);
+}
+
+.banner-content h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.banner-content p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  max-width: 600px;
+}
+
+.banner-progress-summary {
+  display: flex;
+  gap: 15px;
+  margin-top: 14px;
+}
+
+.banner-badge {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.banner-illustration {
+  font-size: 5rem;
+  animation: floatEmoji 4s infinite ease-in-out;
+}
+
+@keyframes floatEmoji {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+/* Parrilla de Tarjetas del Menú Principal */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.menu-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 26px 22px;
+  border: 3px solid #e2e8f0;
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.menu-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: var(--card-accent, var(--primary));
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--card-accent, var(--primary));
+}
+
+.card-learn { --card-accent: #4361ee; }
+.card-games { --card-accent: #f72585; }
+.card-stats { --card-accent: #2ec4b6; }
+.card-achieve { --card-accent: #ffb703; }
+.card-simce { --card-accent: #7209b7; }
+
+.menu-card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover .menu-card-icon {
+  transform: scale(1.15) rotate(6deg);
+}
+
+.menu-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.menu-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+.menu-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding-top: 12px;
+  border-top: 2px dashed #f1f5f9;
+}
+
+.card-tag {
+  color: var(--card-accent, var(--primary));
+}
+
+.card-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.menu-card:hover .card-arrow {
+  background: var(--card-accent, var(--primary));
+  color: white;
+  transform: translateX(4px);
+}
+
+/* Candado o Requisitos para SIMCE */
+.menu-card.locked {
+  filter: grayscale(0.5);
+  opacity: 0.9;
+}
+
+.lock-badge {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ========================================================
+   MODALES Y CELEBRACIONES
+   ======================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-box {
+  background: white;
+  border-radius: var(--radius-lg);
+  max-width: 500px;
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  border: 4px solid #e2e8f0;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.modal-celebration-icon {
+  font-size: 60px;
+  margin-bottom: 12px;
+  animation: bounce 1s infinite alternate;
+}
+
+.modal-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+.modal-message {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-weight: 900;
+  font-size: 1.05rem;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #2b44c2, 0 10px 20px rgba(67, 97, 238, 0.35);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  user-select: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 0 #2b44c2, 0 14px 26px rgba(67, 97, 238, 0.45);
+  background: linear-gradient(135deg, #4f46e5 0%, #38bdf8 100%);
+}
+
+.btn-primary:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #2b44c2, 0 4px 8px rgba(67, 97, 238, 0.2);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--text-main);
+  border: 2px solid #cbd5e1;
+  padding: 12px 22px;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #94a3b8, 0 6px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+
+.btn-secondary:hover {
+  background: #f8fafc;
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #94a3b8, 0 10px 18px rgba(0, 0, 0, 0.08);
+}
+
+.btn-secondary:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #94a3b8;
+}
+
+/* Efecto Confetti */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* ========================================================
+   FOOTER GENERAL
+   ======================================================== */
+.system-footer {
+  background: #ffffff;
+  border-top: 2px solid #e2e8f0;
+  padding: 16px 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-container {
+    flex-wrap: wrap;
+    padding: 8px 12px;
+  }
+  .brand-text h1 {
+    font-size: 1.15rem;
+  }
+  .header-student-profile {
+    gap: 8px;
+  }
+  .stat-chip {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+  .welcome-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+    gap: 16px;
+  }
+  .banner-progress-summary {
+    justify-content: center;
+  }
+  .banner-illustration {
+    font-size: 3.5rem;
+  }
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}

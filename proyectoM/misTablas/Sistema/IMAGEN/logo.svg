@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4361ee" />
+      <stop offset="100%" stop-color="#7209b7" />
+    </linearGradient>
+    <linearGradient id="rocketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb703" />
+      <stop offset="100%" stop-color="#fb8500" />
+    </linearGradient>
+  </defs>
+  <!-- Fondo circular -->
+  <circle cx="100" cy="100" r="90" fill="url(#bgGrad)" stroke="#ffffff" stroke-width="6" />
+  <!-- Estrellas de fondo -->
+  <polygon points="40,50 43,58 51,58 45,63 47,71 40,66 33,71 35,63 29,58 37,58" fill="#ffd166" />
+  <polygon points="160,130 162,136 168,136 163,140 165,146 160,142 155,146 157,140 152,136 158,136" fill="#ffd166" />
+  <!-- Cohete / Lápiz matemático -->
+  <path d="M100,35 C115,65 125,100 120,135 L80,135 C75,100 85,65 100,35 Z" fill="#ffffff" />
+  <path d="M100,35 C108,55 112,75 110,95 L90,95 C88,75 92,55 100,35 Z" fill="url(#rocketGrad)" />
+  <!-- Ventanilla con símbolo de multiplicación -->
+  <circle cx="100" cy="115" r="14" fill="#4361ee" />
+  <text x="100" y="122" font-size="20" font-family="Arial, sans-serif" font-weight="900" fill="#ffffff" text-anchor="middle">×</text>
+  <!-- Alerones -->
+  <polygon points="76,120 55,145 80,138" fill="#f72585" />
+  <polygon points="124,120 145,145 120,138" fill="#f72585" />
+  <!-- Fuego propulsor -->
+  <polygon points="90,138 100,165 110,138" fill="#ffb703" />
+  <polygon points="94,138 100,155 106,138" fill="#ef4444" />
+</svg>

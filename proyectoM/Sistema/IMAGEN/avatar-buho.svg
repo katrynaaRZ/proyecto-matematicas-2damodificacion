@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Fondo Circular -->
+  <circle cx="50" cy="50" r="46" fill="#fef3c7" stroke="#d97706" stroke-width="4"/>
+  <!-- Cuerpo búho -->
+  <ellipse cx="50" cy="55" rx="30" ry="28" fill="#d97706"/>
+  <!-- Penachos orejas -->
+  <polygon points="25,28 35,42 20,40" fill="#b45309"/>
+  <polygon points="75,28 65,42 80,40" fill="#b45309"/>
+  <!-- Anteojos / Ojos grandes -->
+  <circle cx="38" cy="50" r="14" fill="#ffffff" stroke="#78350f" stroke-width="2"/>
+  <circle cx="62" cy="50" r="14" fill="#ffffff" stroke="#78350f" stroke-width="2"/>
+  <circle cx="38" cy="50" r="6" fill="#1e1b4b"/>
+  <circle cx="62" cy="50" r="6" fill="#1e1b4b"/>
+  <!-- Pico -->
+  <polygon points="46,56 54,56 50,65" fill="#f59e0b"/>
+</svg>

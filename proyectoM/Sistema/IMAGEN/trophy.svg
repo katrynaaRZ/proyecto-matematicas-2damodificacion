@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#eab308" />
+    </linearGradient>
+  </defs>
+  <!-- Copa Dorada -->
+  <path d="M25,20 L75,20 C75,50 60,65 50,65 C40,65 25,50 25,20 Z" fill="url(#goldGrad)" stroke="#ca8a04" stroke-width="3" />
+  <!-- Asas -->
+  <path d="M25,26 C15,26 15,48 27,48" fill="none" stroke="#ca8a04" stroke-width="4" stroke-linecap="round" />
+  <path d="M75,26 C85,26 85,48 73,48" fill="none" stroke="#ca8a04" stroke-width="4" stroke-linecap="round" />
+  <!-- Tallo y Base -->
+  <rect x="46" y="65" width="8" height="15" fill="#ca8a04" />
+  <rect x="30" y="80" width="40" height="10" rx="3" fill="#854d0e" />
+  <!-- Estrella en el centro -->
+  <polygon points="50,30 53,38 61,38 55,43 57,51 50,46 43,51 45,43 39,38 47,38" fill="#ffffff" />
+</svg>
